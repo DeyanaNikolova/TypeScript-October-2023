@@ -16,6 +16,6 @@ isDog = [1, 2, 3, 4].some(e => e === 1);
 console.log('boolean', isDog);
 
 
-
+let uniqueSymbol: Symbol = Symbol('myUniqueSymbol');
 
 
