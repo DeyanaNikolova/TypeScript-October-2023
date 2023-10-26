@@ -1,4 +1,5 @@
-let num: number = 5;
-let str: string = '123';
+let str = "Hello";
+str = "ok";
+str = `ok`;
 
-console.log(num + Number(str));
+console.log(str);
