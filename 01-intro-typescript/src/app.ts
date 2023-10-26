@@ -1,5 +1,7 @@
-let str = "Hello";
-str = "ok";
-str = `ok`;
+let greetingMessage = "Hello";
+greetingMessage = "Ok";
+greetingMessage = `Ok (updated) ${123}`;
 
-console.log(str);
+console.log(greetingMessage);
+
+
