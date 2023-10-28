@@ -54,7 +54,10 @@ type Person = {
 };
 
 const arrOfObj: Person[] = [{name: 'Pesho', age: 25}, {name: 'Ivan', age: 15}];
-console.log('array of objects', arrOfObj);
+// console.log('array of objects', arrOfObj);
 
+// Tuples
+const numberAndStringTuples: [number, string] = [18, 'Pesho'];
+console.log('array of tuples', numberAndStringTuples);
 
 
