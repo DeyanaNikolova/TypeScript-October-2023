@@ -140,6 +140,16 @@ const obj: Dog & Dog2 = {name: 'Boby', fullName: 'Boby Bobev'};
 
 // Literal types
 let statusMsg: 'success' | 'error' = 'success';
-console.log('literal: ', statusMsg);
+// console.log('literal: ', statusMsg);
 
+
+// Aliases types
+type Cat = {
+    breed: string;
+    weigth: number;
+    name: string;
+}
+
+const catMocart: Cat = {breed: 'Ragdool', weigth: 6, name: 'Mocart'};
+ console.log('aliases', catMocart);
  
