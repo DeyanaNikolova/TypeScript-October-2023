@@ -89,7 +89,7 @@ enum DaysOfWeek2 {
  a = { name: 'Ivan'};
  a = [{name: 'Ivan'}, {name: 'Pesho'}];
  a = null;
- console.log('any', a);
+ // console.log('any', a);
 
 
 // Unknown
@@ -98,11 +98,24 @@ enum DaysOfWeek2 {
  b = { name: 'Ivan'};
  b = [{name: 'Ivan'}, {name: 'Pesho'}];
  b = null;
- console.log('unknown', b);
+ // console.log('unknown', b);
 
  // Function type void
  function greetings(name: string): void {
-    console.log(`Hello ${name}!`);   
+   // console.log(`Hello ${name}!`);   
  }
  greetings('Ivan');
+
+
+//  Optopnal data types   ?
+ function printPersonDetails(name:string, age?: number) {
+   if(typeof age !== 'undefined'){
+    return `Hello ${name}, you are ${age} y/o.`;
+   } 
+    return `Hello ${name}!`;
+ }
+ console.log(printPersonDetails('Mitko'));
+ console.log(printPersonDetails('Maria', 35));
+
+
  
