@@ -28,35 +28,63 @@
 //     },
 // }
 
+/** Core principles of OOP */
 
-interface Details{
-    getDetails: () => void;
+// interface Details{
+//     getDetails: () => void;
+// }
+// class  Person implements Details{
+//    private eyeColor: string;
+//    private skinColor: string;
+//    constructor(eyeColor: string, skinColor: string){
+//     this.eyeColor = eyeColor;
+//     this.skinColor = skinColor;
+//    }
+
+//   public getDetails(): void{
+//     console.log(`Hello my eyes are ${this.eyeColor}, and my skin is ${this.skinColor}.`);
+//    }
+// }
+
+// class Computer implements Details{
+//     private color: string;
+// constructor(color: string){
+//     this.color = color;
+// }
+//     public getDetails(): void{
+//         console.log(`Hello, this computer is ${this.color} color.`);
+//        }
+// }
+
+// const person = new Person('green', 'white');
+// person.getDetails();
+
+// const comp = new Computer('red');
+// comp.getDetails();
+
+
+/** SOLID Principles */
+
+class Student{
+    studentId: number;
+    firstName: string;
+    lastName: string;
+
+constructor(studentId: number, firsName: string, lastName: string){
+    this.studentId = studentId;
+    this.firstName = firsName;
+    this.lastName = lastName;
 }
-class  Person implements Details{
-   private eyeColor: string;
-   private skinColor: string;
-   constructor(eyeColor: string, skinColor: string){
-    this.eyeColor = eyeColor;
-    this.skinColor = skinColor;
-   }
 
-  public getDetails(): void{
-    console.log(`Hello my eyes are ${this.eyeColor}, and my skin is ${this.skinColor}.`);
-   }
+    save(): void{
+        // save student record to database
+    }
+
+    email(): void{
+        // to send email from the student
+    }
+
+    enrol(): void{
+        // to enrol student in a course
+    }
 }
-
-class Computer implements Details{
-    private color: string;
-constructor(color: string){
-    this.color = color;
-}
-    public getDetails(): void{
-        console.log(`Hello, this computer is ${this.color} color.`);
-       }
-}
-
-const person = new Person('green', 'white');
-person.getDetails();
-
-const comp = new Computer('red');
-comp.getDetails();
