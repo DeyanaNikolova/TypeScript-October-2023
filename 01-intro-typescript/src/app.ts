@@ -155,4 +155,14 @@ type Cat = {
 
 const catMocart: Cat = {breed: 'Ragdool', weigth: 6, name: 'Mocart', age: 3};
 //  console.log('aliases', catMocart);
+
+type Point = { x: number; y: number };
+
+const point: Point = {x: 22, y: -12};
+
+Object.keys(point).forEach(key =>{
+    console.log(key as keyof Point);
+});
+
+
  
