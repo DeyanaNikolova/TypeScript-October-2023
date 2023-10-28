@@ -71,7 +71,13 @@ enum DaysOfWeek {
     Sunday
 };
 
-console.log('enum', DaysOfWeek);
-console.log(DaysOfWeek.Friday);
+// console.log('enum', DaysOfWeek);
+// console.log(DaysOfWeek.Friday);
 
+enum DaysOfWeek2 {
+    Monday = 200, 
+    Tuesday = 'Dog', 
+    Wednesday = 1200, 
+};
 
+console.log(DaysOfWeek2.Tuesday);
