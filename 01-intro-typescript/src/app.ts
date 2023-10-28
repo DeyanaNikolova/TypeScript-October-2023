@@ -144,12 +144,15 @@ let statusMsg: 'success' | 'error' = 'success';
 
 
 // Aliases types
+type Age = number;
+
 type Cat = {
     breed: string;
     weigth: number;
     name: string;
+    age: Age;
 }
 
-const catMocart: Cat = {breed: 'Ragdool', weigth: 6, name: 'Mocart'};
- console.log('aliases', catMocart);
+const catMocart: Cat = {breed: 'Ragdool', weigth: 6, name: 'Mocart', age: 3};
+//  console.log('aliases', catMocart);
  
