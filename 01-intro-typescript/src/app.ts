@@ -17,5 +17,11 @@ console.log('boolean', isDog);
 
 
 let uniqueSymbol: Symbol = Symbol('myUniqueSymbol');
+let anotherUnoqueSymbol: Symbol = Symbol('myUniqueSymbol');
+const areEqual = uniqueSymbol === anotherUnoqueSymbol;
+
+console.log('symbol', uniqueSymbol);
+console.log(areEqual);
+
 
 
