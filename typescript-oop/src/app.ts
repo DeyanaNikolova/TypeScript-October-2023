@@ -12,7 +12,8 @@
 const employee = {
     baseSalary: 30000,
     overtome: 10,
-    getWage: function () {
+    // Uncle Bob -> the best function is the function with no params
+    getWage: function (): number {
         return this.baseSalary + this.overtome * 1.5;
     }
 };
