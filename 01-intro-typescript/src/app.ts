@@ -99,4 +99,10 @@ enum DaysOfWeek2 {
  b = [{name: 'Ivan'}, {name: 'Pesho'}];
  b = null;
  console.log('unknown', b);
+
+ // Function type void
+ function greetings(name: string): void {
+    console.log(`Hello ${name}!`);   
+ }
+ greetings('Ivan');
  
