@@ -9,12 +9,54 @@
 // console.log(getWage(baseSalary, overtime));
 
 // OOP way
-const employee = {
-    baseSalary: 30000,
-    overtome: 10,
-    // Uncle Bob -> the best function is the function with no params
-    getWage: function (): number {
-        return this.baseSalary + this.overtome * 1.5;
-    }
-};
-console.log(employee.getWage());
+// const employee = {
+//     baseSalary: 30000,
+//     overtome: 10,
+//     // Uncle Bob -> the best function is the function with no params
+//     getWage: function (): number {
+//         return this.baseSalary + this.overtome * 1.5;
+//     }
+// };
+// console.log(employee.getWage());
+
+// const car = {
+//     speedLimit: 120,
+//     suspention: 'air',
+//     color: 'green',
+//     detColor: function () {
+//       return  this.color;
+//     },
+// }
+
+
+interface Details{
+    getDetails: () => void;
+}
+class  Person implements Details{
+   private eyeColor: string;
+   private skinColor: string;
+   constructor(eyeColor: string, skinColor: string){
+    this.eyeColor = eyeColor;
+    this.skinColor = skinColor;
+   }
+
+  public getDetails(): void{
+    console.log(`Hello my eyes are ${this.eyeColor}, and my skin is ${this.skinColor}.`);
+   }
+}
+
+class Computer implements Details{
+    private color: string;
+constructor(color: string){
+    this.color = color;
+}
+    public getDetails(): void{
+        console.log(`Hello, this computer is ${this.color} color.`);
+       }
+}
+
+const person = new Person('green', 'white');
+person.getDetails();
+
+const comp = new Computer('red');
+comp.getDetails();
