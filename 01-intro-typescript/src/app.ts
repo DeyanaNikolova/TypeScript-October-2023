@@ -58,6 +58,20 @@ const arrOfObj: Person[] = [{name: 'Pesho', age: 25}, {name: 'Ivan', age: 15}];
 
 // Tuples
 const numberAndStringTuples: [number, string] = [18, 'Pesho'];
-console.log('array of tuples', numberAndStringTuples);
+//console.log('array of tuples', numberAndStringTuples);
+
+// Enum
+enum DaysOfWeek {
+    Monday, 
+    Tuesday, 
+    Wednesday, 
+    Thusrday, 
+    Friday, 
+    Saturday, 
+    Sunday
+};
+
+console.log('enum', DaysOfWeek);
+console.log(DaysOfWeek.Friday);
 
 
