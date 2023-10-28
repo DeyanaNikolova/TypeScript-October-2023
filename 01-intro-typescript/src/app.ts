@@ -135,8 +135,11 @@ type Dog = {name: string };
 type Dog2 = { fullName: string};
 
 const obj: Dog & Dog2 = {name: 'Boby', fullName: 'Boby Bobev'};
-console.log('intersection', obj);
+// console.log('intersection', obj);
 
 
+// Literal types
+let statusMsg: 'success' | 'error' = 'success';
+console.log('literal: ', statusMsg);
 
  
