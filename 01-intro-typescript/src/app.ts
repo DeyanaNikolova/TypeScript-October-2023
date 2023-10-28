@@ -80,4 +80,23 @@ enum DaysOfWeek2 {
     Wednesday = 1200, 
 };
 
-console.log(DaysOfWeek2.Tuesday);
+ // console.log(DaysOfWeek2.Tuesday);
+
+
+ // Any
+ let a: any = 5;
+ a = 'Poker';
+ a = { name: 'Ivan'};
+ a = [{name: 'Ivan'}, {name: 'Pesho'}];
+ a = null;
+ console.log('any', a);
+
+
+// Unknown
+ let b: unknown = 5;
+ b = 'Poker';
+ b = { name: 'Ivan'};
+ b = [{name: 'Ivan'}, {name: 'Pesho'}];
+ b = null;
+ console.log('unknown', b);
+ 
