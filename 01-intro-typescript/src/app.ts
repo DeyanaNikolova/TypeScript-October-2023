@@ -114,8 +114,20 @@ enum DaysOfWeek2 {
    } 
     return `Hello ${name}!`;
  }
- console.log(printPersonDetails('Mitko'));
- console.log(printPersonDetails('Maria', 35));
+//  console.log(printPersonDetails('Mitko'));
+//  console.log(printPersonDetails('Maria', 35));
+
+// Union types
+let personsArray: string[] | null = null;
+
+function fetchPersons() {
+        personsArray = ['Mitko', 'Pesho', 'Kiro'];  
+}
+console.log('before', personsArray);
+fetchPersons();
+console.log('after', personsArray);
+
+
 
 
  
