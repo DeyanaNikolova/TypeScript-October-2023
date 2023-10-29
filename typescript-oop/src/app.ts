@@ -64,27 +64,41 @@
 
 
 /** SOLID Principles */
+// Single responsibility
+// class StudentDemo{
+//     studentId: number;
+//     firstName: string;
+//     lastName: string;
 
-class Student{
-    studentId: number;
-    firstName: string;
-    lastName: string;
+// constructor(studentId: number, firsName: string, lastName: string){
+//     this.studentId = studentId;
+//     this.firstName = firsName;
+//     this.lastName = lastName;
+// }
 
-constructor(studentId: number, firsName: string, lastName: string){
-    this.studentId = studentId;
-    this.firstName = firsName;
-    this.lastName = lastName;
-}
+//     save(): void{
+//         // save student record to database
+//     }
 
-    save(): void{
-        // save student record to database
-    }
+//     email(): void{
+//         // to send email from the student
+//     }
 
-    email(): void{
-        // to send email from the student
-    }
+//     enrol(): void{
+//         // to enrol student in a course
+//     }
+// }
 
-    enrol(): void{
-        // to enrol student in a course
-    }
-}
+// class EmailService{
+//     // email functionality
+// }
+// class Student{
+//     // details for the student: id, fname, lname
+// }
+// class EnrollmentService{
+//     // enrollment functionality
+// }
+// class StudentRepository{
+//     // CRUD
+//     // REpository classes -> responsible for the DB communication
+// }
