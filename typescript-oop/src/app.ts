@@ -237,27 +237,81 @@
 
 
 // Accessors -> setters and getters
-class Employee {
-    private _firstName: string;
+// class Employee {
+//     private _firstName: string;
 
-    constructor(firstName: string){
-        this._firstName = firstName;
+//     constructor(firstName: string){
+//         this._firstName = firstName;
+//     }
+
+//     public get firsName(): string {
+//         return this._firstName.trim();
+//     }
+
+//     public set firstName(newFirstName: string) {
+//         if(newFirstName.length < 4){
+//             throw new Error('First name should be at least 4 characters long!');
+//         }
+//         this._firstName = newFirstName;
+//     }
+// }
+
+// const employeeIvan = new Employee('Ivan');
+// console.log('firstName', employeeIvan.firsName);
+// employeeIvan.firstName = 'Ashted';
+// console.log('firstName', employeeIvan.firsName);
+
+// Access Modifiers
+
+// class Person {
+//     protected name: string;
+//     protected age: number;
+  
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     protected getDetails(): void {
+//     console.log(`Hi this is ${this.name}, age: ${this.age}.`);  
+// }
+// protected modifyAge(): void {
+//     this.age++
+// }
+// }
+// const mitko = new Person('Mitko', 22);
+
+// mitko.getDetails();
+// mitko.modifyAge();
+
+
+// Abstract classes
+class Person {
+    protected name: string;
+    protected age: number;
+  
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
     }
 
-    public get firsName(): string {
-        return this._firstName.trim();
+    protected getDetails(): void {
+    console.log(`Hi this is ${this.name}, age: ${this.age}.`);  
+}
+protected modifyAge(): void {
+    this.age++
+}
+}
+
+class Employee extends Person {
+    constructor(name: string, age: number){
+        super(name, age);   
     }
 
-    public set firstName(newFirstName: string) {
-        if(newFirstName.length < 4){
-            throw new Error('First name should be at least 4 characters long!');
-        }
-        this._firstName = newFirstName;
+    getEmployeeDetails(){
+        return this.getDetails();
     }
 }
 
-const employeeIvan = new Employee('Ivan');
-console.log('firstName', employeeIvan.firsName);
-employeeIvan.firstName = 'Ashted';
-console.log('firstName', employeeIvan.firsName);
-
+const employee = new Employee('Ivan', 30);
+employee.getEmployeeDetails();
