@@ -102,3 +102,32 @@
 //     // CRUD
 //     // REpository classes -> responsible for the DB communication
 // }
+
+// Open-closed principle
+class Car{
+    protected color: string;
+
+    constructor(color: string){
+        this.color = color;
+    }
+
+    getColor(){
+        return this.color;
+    }
+}
+
+class BMW extends Car{
+    private serialNumber: string;
+
+    constructor(color: string, serialNumber: string){
+        super(color);
+        this.serialNumber = serialNumber;
+    }
+    getDetails(){
+    console.log(this.color + ' - ' + this.serialNumber);
+    
+    }
+}
+const myBMW = new BMW('red', 'HDnmwi"£$2327655');
+console.log(myBMW.getColor());
+myBMW.getDetails();
