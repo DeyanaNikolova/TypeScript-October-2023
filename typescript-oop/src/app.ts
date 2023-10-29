@@ -211,18 +211,19 @@ class Person {
     // proprerties 
     firstName: string;
     age: number;
-    static idNumber = 'xx123xxx123';
+    static count: number = 0;
     // onject instanciation -> object creation
     constructor(firstName: string, age: number){
         this.firstName = firstName;
         this.age = age;
     }
     // methods -> behaviour
-    static getIdNumber(): string{
-        return Person.idNumber + 'soo cool!';
+    static geetingIncrementor(): number{
+        Person.count++;
+        return Person.count;
     }
     greeting(){
-        console.log(`Hello from ${this.firstName}! With id: ${Person.getIdNumber()}`);   
+        console.log(`Hello from ${this.firstName}! Greeting counter ${Person.geetingIncrementor()}`);   
     }
 }
 // instances of a class
