@@ -133,44 +133,75 @@
 // myBMW.getDetails();
 
 // Interface Segregation Principle
-interface Geo  {
-    lat: number;
-    lng: number;
-  }
 
-interface Address {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: Geo;
-  }
+// interface Geo  {
+//     lat: number;
+//     lng: number;
+//   }
 
-  interface Company {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  }
+// interface Address {
+//     street: string;
+//     suite: string;
+//     city: string;
+//     zipcode: string;
+//     geo: Geo;
+//   }
 
- interface PersonDetails {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    phone: string;
- }
+//   interface Company {
+//     name: string;
+//     catchPhrase: string;
+//     bs: string;
+//   }
 
- interface User{
-    details: PersonDetails;
-   address: Address;
-    website: string;
-    company: Company;
-  };
+//  interface PersonDetails {
+//     id: number;
+//     name: string;
+//     username: string;
+//     email: string;
+//     phone: string;
+//  }
 
-  class Person implements PersonDetails {
-    id: number = 0;
-    name: string = '';
-    username: string = '';
-    email: string = '';
-    phone: string = '';
-  }
+//  interface User{
+//     details: PersonDetails;
+//    address: Address;
+//     website: string;
+//     company: Company;
+//   };
+
+//   class Person implements PersonDetails {
+//     id: number = 0;
+//     name: string = '';
+//     username: string = '';
+//     email: string = '';
+//     phone: string = '';
+//   }
+
+// Dependancy Inversion Principle
+class Wallet {
+    balance: number;
+
+    constructor(balance: number){
+        this.balance = balance;
+    }
+}
+
+class User{
+    wallet: Wallet;
+    firstName: string;
+
+    constructor(firstName: string, wallet: Wallet){
+        this.firstName = firstName;
+        this.wallet = wallet;
+    }
+
+    getWalletBalance(){
+        return `${this.firstName} has ${this.wallet.balance} money in his account.`;
+    }
+}
+const ivansWallet = new Wallet(4000);
+const ivanUser = new User('Ivan', ivansWallet);
+console.log(ivanUser.getWalletBalance());
+
+const peshosWAllet = new Wallet( 7000);
+const peshoUser = new User('Pesho', peshosWAllet);
+console.log(peshoUser.getWalletBalance());
