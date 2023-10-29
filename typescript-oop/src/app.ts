@@ -206,7 +206,7 @@
 // const peshoUser = new User('Pesho', peshosWAllet);
 // console.log(peshoUser.getWalletBalance());
 
-// Blueprint
+// Blueprint -> classes
 class Person {
     // proprerties 
     firstName: string;
