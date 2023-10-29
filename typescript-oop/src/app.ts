@@ -104,30 +104,73 @@
 // }
 
 // Open-closed principle
-class Car{
-    protected color: string;
+// class Car{
+//     protected color: string;
 
-    constructor(color: string){
-        this.color = color;
-    }
+//     constructor(color: string){
+//         this.color = color;
+//     }
 
-    getColor(){
-        return this.color;
-    }
-}
+//     getColor(){
+//         return this.color;
+//     }
+// }
 
-class BMW extends Car{
-    private serialNumber: string;
+// class BMW extends Car{
+//     private serialNumber: string;
 
-    constructor(color: string, serialNumber: string){
-        super(color);
-        this.serialNumber = serialNumber;
-    }
-    getDetails(){
-    console.log(this.color + ' - ' + this.serialNumber);
+//     constructor(color: string, serialNumber: string){
+//         super(color);
+//         this.serialNumber = serialNumber;
+//     }
+//     getDetails(){
+//     console.log(this.color + ' - ' + this.serialNumber);
     
-    }
-}
-const myBMW = new BMW('red', 'HDnmwi"£$2327655');
-console.log(myBMW.getColor());
-myBMW.getDetails();
+//     }
+// }
+// const myBMW = new BMW('red', 'HDnmwi"£$2327655');
+// console.log(myBMW.getColor());
+// myBMW.getDetails();
+
+// Interface Segregation Principle
+interface Geo  {
+    lat: number;
+    lng: number;
+  }
+
+interface Address {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: Geo;
+  }
+
+  interface Company {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  }
+
+ interface PersonDetails {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    phone: string;
+ }
+
+ interface User{
+    details: PersonDetails;
+   address: Address;
+    website: string;
+    company: Company;
+  };
+
+  class Person implements PersonDetails {
+    id: number = 0;
+    name: string = '';
+    username: string = '';
+    email: string = '';
+    phone: string = '';
+  }
