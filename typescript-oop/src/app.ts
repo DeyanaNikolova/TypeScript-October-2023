@@ -207,30 +207,57 @@
 // console.log(peshoUser.getWalletBalance());
 
 // Blueprint -> classes
-class Person {
-    // proprerties 
-    firstName: string;
-    age: number;
-    static count: number = 0;
-    // onject instanciation -> object creation
-    constructor(firstName: string, age: number){
-        this.firstName = firstName;
-        this.age = age;
+// class Person {
+//     // proprerties 
+//     firstName: string;
+//     age: number;
+//     static count: number = 0;
+//     // onject instanciation -> object creation
+//     constructor(firstName: string, age: number){
+//         this.firstName = firstName;
+//         this.age = age;
+//     }
+//     // methods -> behaviour
+//     static geetingIncrementor(): number{
+//         Person.count++;
+//         return Person.count;
+//     }
+//     greeting(){
+//         console.log(`Hello from ${this.firstName}! Greeting counter ${Person.geetingIncrementor()}`);   
+//     }
+// }
+// // instances of a class
+// const personMaria = new Person('Maria', 23);
+// personMaria.greeting();
+// const personIvan = new Person('Ivan', 44);
+// personIvan.greeting();
+// const personKircho = new Person('Kircho', 50);
+// personKircho.greeting();
+
+
+
+// Accessors -> setters and getters
+class Employee {
+    private _firstName: string;
+
+    constructor(firstName: string){
+        this._firstName = firstName;
     }
-    // methods -> behaviour
-    static geetingIncrementor(): number{
-        Person.count++;
-        return Person.count;
+
+    public get firsName(): string {
+        return this._firstName.trim();
     }
-    greeting(){
-        console.log(`Hello from ${this.firstName}! Greeting counter ${Person.geetingIncrementor()}`);   
+
+    public set firstName(newFirstName: string) {
+        if(newFirstName.length < 4){
+            throw new Error('First name should be at least 4 characters long!');
+        }
+        this._firstName = newFirstName;
     }
 }
-// instances of a class
-const personMaria = new Person('Maria', 23);
-personMaria.greeting();
-const personIvan = new Person('Ivan', 44);
-personIvan.greeting();
-const personKircho = new Person('Kircho', 50);
-personKircho.greeting();
+
+const employeeIvan = new Employee('Ivan');
+console.log('firstName', employeeIvan.firsName);
+employeeIvan.firstName = 'Ashted';
+console.log('firstName', employeeIvan.firsName);
 
