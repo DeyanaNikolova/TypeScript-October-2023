@@ -286,7 +286,7 @@
 
 
 // Abstract classes
-class Person {
+ abstract class Person {
     protected name: string;
     protected age: number;
   
