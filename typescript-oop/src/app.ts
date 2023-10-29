@@ -177,31 +177,56 @@
 //   }
 
 // Dependancy Inversion Principle
-class Wallet {
-    balance: number;
+// class Wallet {
+//     balance: number;
 
-    constructor(balance: number){
-        this.balance = balance;
-    }
-}
+//     constructor(balance: number){
+//         this.balance = balance;
+//     }
+// }
 
-class User{
-    wallet: Wallet;
+// class User{
+//     wallet: Wallet;
+//     firstName: string;
+
+//     constructor(firstName: string, wallet: Wallet){
+//         this.firstName = firstName;
+//         this.wallet = wallet;
+//     }
+
+//     getWalletBalance(){
+//         return `${this.firstName} has ${this.wallet.balance} money in his account.`;
+//     }
+// }
+// const ivansWallet = new Wallet(4000);
+// const ivanUser = new User('Ivan', ivansWallet);
+// console.log(ivanUser.getWalletBalance());
+
+// const peshosWAllet = new Wallet( 7000);
+// const peshoUser = new User('Pesho', peshosWAllet);
+// console.log(peshoUser.getWalletBalance());
+
+// Blueprint
+class Person {
+    // proprerties 
     firstName: string;
+    age: number;
 
-    constructor(firstName: string, wallet: Wallet){
+    // onject instanciation -> object creation
+    constructor(firstName: string, age: number){
         this.firstName = firstName;
-        this.wallet = wallet;
+        this.age = age;
     }
-
-    getWalletBalance(){
-        return `${this.firstName} has ${this.wallet.balance} money in his account.`;
+    // methods -> behaviour
+    greeting(){
+        console.log(`Hello from ${this.firstName}!`);   
     }
 }
-const ivansWallet = new Wallet(4000);
-const ivanUser = new User('Ivan', ivansWallet);
-console.log(ivanUser.getWalletBalance());
+// instances of a class
+const personMaria = new Person('Maria', 23);
+personMaria.greeting();
+const personIvan = new Person('Ivan', 44);
+personIvan.greeting();
+const personKircho = new Person('Kircho', 50);
+personKircho.greeting();
 
-const peshosWAllet = new Wallet( 7000);
-const peshoUser = new User('Pesho', peshosWAllet);
-console.log(peshoUser.getWalletBalance());
