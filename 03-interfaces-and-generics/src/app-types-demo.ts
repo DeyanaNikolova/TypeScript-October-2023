@@ -7,10 +7,11 @@ type Animal = {
   eat: () => void;
 };
 
-type Dog1 = Mammal & Animal;
+type Dog1 = Mammal & Animal & { name: string };
 
 function getMammal(): Dog1 {
   const dog: Dog1 = {
+    name: 'Rexy',
     legsCount: 4,
     furColor: "white",
     eat: () => console.log("Dog is eating"),
@@ -21,6 +22,10 @@ function getMammal(): Dog1 {
 
 interface DogOwner {
     dogs: Dog1[];
+}
+
+type PersonTest = {
+    dogOwner: DogOwner;
 }
 
 
