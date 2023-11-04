@@ -284,32 +284,60 @@
 
 // Abstract classes are used only for inheritance/extemtin
 
-abstract class Person {
-  protected name: string;
-  protected age: number;
+// abstract class Person {
+//   protected name: string;
+//   protected age: number;
 
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
 
-  protected getDetails(): void {
-    console.log(`Hi this is ${this.name}, age: ${this.age}.`);
-  }
-  protected modifyAge(): void {
-    this.age++;
-  }
+//   protected getDetails(): void {
+//     console.log(`Hi this is ${this.name}, age: ${this.age}.`);
+//   }
+//   protected modifyAge(): void {
+//     this.age++;
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(name: string, age: number) {
+//     super(name, age);
+//   }
+
+//   getEmployeeDetails() {
+//     return this.getDetails();
+//   }
+// }
+
+// const employee = new Employee("Ivan", 30);
+// employee.getEmployeeDetails();
+
+
+// Design Pattern
+// Singleton Pattern -> Anti-Patterns
+
+class Singleton{
+    private static instance: Singleton | null = null;
+
+private constructor(){}
+    public static getInstance(): Singleton {
+        if(this.instance === null){
+            this.instance = new Singleton();
+        }
+        return this.instance;
+    }
+    public someMethod(): void {
+        console.log('This is singleton method');     
+    }
 }
 
-class Employee extends Person {
-  constructor(name: string, age: number) {
-    super(name, age);
-  }
+const instance1 = Singleton.getInstance();
+instance1.someMethod();
 
-  getEmployeeDetails() {
-    return this.getDetails();
-  }
-}
+const instance2 = Singleton.getInstance();
+instance2.someMethod();
 
-const employee = new Employee("Ivan", 30);
-employee.getEmployeeDetails();
+const areInstancesTheSame = instance1 === instance2;
+console.log(areInstancesTheSame);
