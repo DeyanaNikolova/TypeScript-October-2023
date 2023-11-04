@@ -62,7 +62,6 @@
 // const comp = new Computer('red');
 // comp.getDetails();
 
-
 /** SOLID Principles */
 // Single responsibility
 // class StudentDemo{
@@ -125,7 +124,7 @@
 //     }
 //     getDetails(){
 //     console.log(this.color + ' - ' + this.serialNumber);
-    
+
 //     }
 // }
 // const myBMW = new BMW('red', 'HDnmwi"£$2327655');
@@ -208,7 +207,7 @@
 
 // Blueprint -> classes
 // class Person {
-//     // proprerties 
+//     // proprerties
 //     firstName: string;
 //     age: number;
 //     static count: number = 0;
@@ -223,7 +222,7 @@
 //         return Person.count;
 //     }
 //     greeting(){
-//         console.log(`Hello from ${this.firstName}! Greeting counter ${Person.geetingIncrementor()}`);   
+//         console.log(`Hello from ${this.firstName}! Greeting counter ${Person.geetingIncrementor()}`);
 //     }
 // }
 // // instances of a class
@@ -233,8 +232,6 @@
 // personIvan.greeting();
 // const personKircho = new Person('Kircho', 50);
 // personKircho.greeting();
-
-
 
 // Accessors -> setters and getters
 // class Employee {
@@ -266,14 +263,14 @@
 // class Person {
 //     protected name: string;
 //     protected age: number;
-  
+
 //     constructor(name: string, age: number) {
 //         this.name = name;
 //         this.age = age;
 //     }
 
 //     protected getDetails(): void {
-//     console.log(`Hi this is ${this.name}, age: ${this.age}.`);  
+//     console.log(`Hi this is ${this.name}, age: ${this.age}.`);
 // }
 // protected modifyAge(): void {
 //     this.age++
@@ -285,33 +282,34 @@
 // mitko.modifyAge();
 
 
-// Abstract classes
- abstract class Person {
-    protected name: string;
-    protected age: number;
-  
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+// Abstract classes are used only for inheritance/extemtin
 
-    protected getDetails(): void {
-    console.log(`Hi this is ${this.name}, age: ${this.age}.`);  
-}
-protected modifyAge(): void {
-    this.age++
-}
+abstract class Person {
+  protected name: string;
+  protected age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  protected getDetails(): void {
+    console.log(`Hi this is ${this.name}, age: ${this.age}.`);
+  }
+  protected modifyAge(): void {
+    this.age++;
+  }
 }
 
 class Employee extends Person {
-    constructor(name: string, age: number){
-        super(name, age);   
-    }
+  constructor(name: string, age: number) {
+    super(name, age);
+  }
 
-    getEmployeeDetails(){
-        return this.getDetails();
-    }
+  getEmployeeDetails() {
+    return this.getDetails();
+  }
 }
 
-const employee = new Employee('Ivan', 30);
+const employee = new Employee("Ivan", 30);
 employee.getEmployeeDetails();
