@@ -12,6 +12,7 @@ interface Human {
    
   }
 
+  // Can extebds other interfaces
   interface PersonDetails extends UserDetails, Human {
     fullName: string;
   }
