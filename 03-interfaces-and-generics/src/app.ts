@@ -29,6 +29,7 @@ class Person implements PersonDetails {
       this.lastName = lName;
       this.legsCount = legsCount;
       this.skinColor = skinColor;
+      
       this.fullName = this.firstName + ' ' + this.lastName;
     }
   }
