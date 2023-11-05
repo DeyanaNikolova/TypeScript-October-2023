@@ -95,14 +95,25 @@
 // echo(true);
 // echo([1, 2, 3]);
 
-const takeLast = <T>(array: T[]): T =>{
-    return array[array.length - 1];
+// const takeLast = <T>(array: T[]): T =>{
+//     return array[array.length - 1];
+// }
+
+// console.log(takeLast([1, 2, 3, 4]));
+// console.log(takeLast(['a', 'b', 'c', 'd']));
+// console.log(takeLast([true, false, false, true, true]));
+// console.log(takeLast([{a: 1}, {a: 2},{a: 3}]));
+
+// Tuples
+const obj = { a: 1, b: 2, c: 3};
+console.log(Object.entries(obj));
+
+const makeTuples = <T, V>(a: T, b: V): (T | V)[] => {
+    return [a, b];
 }
 
-console.log(takeLast([1, 2, 3, 4]));
-console.log(takeLast(['a', 'b', 'c', 'd']));
-console.log(takeLast([true, false, false, true, true]));
-console.log(takeLast([{a: 1}, {a: 2},{a: 3}]));
+console.log(makeTuples('a', true));
+console.log(makeTuples(1, 'asdasd'));
 
 
 
