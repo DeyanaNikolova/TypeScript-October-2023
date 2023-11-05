@@ -84,13 +84,12 @@
 //     data: 1,
 // }
 
-
 // Generic function
 
 // function echo<T>(arg: T): T {
 //     console.log(typeof arg);
-    
-//    return arg; 
+
+//    return arg;
 // }
 
 // echo(1);
@@ -115,7 +114,6 @@
 //     return [a, b];
 // }
 
-
 // console.log(makeTuples('a', true));
 // console.log(makeTuples(1, 'asdasd'));
 
@@ -130,37 +128,56 @@
 //  const output = generateFn('hello', 'world');
 //  console.log(output);
 
-
 // Generic class
 
 class Collection<T> {
-data: T[];
+  data: T[];
 
-constructor(...elemets: T[]){
+  constructor(...elemets: T[]) {
     this.data = elemets;
-}
+  }
 
-addElement(el: T){
+  addElement(el: T) {
     this.data.push(el);
+  }
+
+  removeElement(el: T) {
+    const index = this.data.indexOf(el);
+    if (index > -1) {
+      this.data.splice(index, 1);
+    }
+  }
 }
 
-removeElement(el: T){
-const index = this.data.indexOf(el);
-if(index > -1){
-    this.data.splice(index, 1);
+// const numberCollection = new Collection(1, 2, 3, 4, 5);
+// console.log(numberCollection.data);
+// numberCollection.addElement(66);
+// numberCollection.removeElement(3);
+// console.log(numberCollection.data);
+
+// const stringCollection = new Collection('a', 'b', 'c', 'd');
+// console.log(stringCollection.data);
+// stringCollection.addElement('e');
+// stringCollection.removeElement('b');
+// console.log(stringCollection.data);
+
+class ParamsDada<F, S> {
+first: F;
+second: S;
+
+constructor(f: F, s: S){
+    this.first = f;
+    this.second = s;
+}
+
+getConcatArg(){
+    return `My first param ${this.first} and my second param is ${this.second}.`;
 }
 }
-}
 
-const numberCollection = new Collection(1, 2, 3, 4, 5);
-console.log(numberCollection.data);
-numberCollection.addElement(66);
-numberCollection.removeElement(3);
-console.log(numberCollection.data);
-
-
-
- 
+const test1 = new ParamsDada(23, 'asdasd');
+test1.getConcatArg();
+console.log(test1);
 
 
 
