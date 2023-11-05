@@ -84,13 +84,25 @@
 //     data: 1,
 // }
 
-function echo<T>(arg: T): T {
-    console.log(typeof arg);
+// function echo<T>(arg: T): T {
+//     console.log(typeof arg);
     
-   return arg; 
+//    return arg; 
+// }
+
+// echo(1);
+// echo('asdasd');
+// echo(true);
+// echo([1, 2, 3]);
+
+const takeLast = <T>(array: T[]): T =>{
+    return array[array.length - 1];
 }
 
-echo(1);
-echo('asdasd');
-echo(true);
-echo([1, 2, 3]);
+console.log(takeLast([1, 2, 3, 4]));
+console.log(takeLast(['a', 'b', 'c', 'd']));
+console.log(takeLast([true, false, false, true, true]));
+console.log(takeLast([{a: 1}, {a: 2},{a: 3}]));
+
+
+
