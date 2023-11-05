@@ -105,15 +105,26 @@
 // console.log(takeLast([{a: 1}, {a: 2},{a: 3}]));
 
 // Tuples
-const obj = { a: 1, b: 2, c: 3};
-console.log(Object.entries(obj));
+// const obj = { a: 1, b: 2, c: 3};
+// console.log(Object.entries(obj));
 
-const makeTuples = <T, V>(a: T, b: V): (T | V)[] => {
-    return [a, b];
+// const makeTuples = <T, V>(a: T, b: V): (T | V)[] => {
+//     return [a, b];
+// }
+
+// console.log(makeTuples('a', true));
+// console.log(makeTuples(1, 'asdasd'));
+
+type GenericConstructor<T , V> = {
+    (arg1: T, arg2: V): [T, V];
 }
+ const generateFn: GenericConstructor<string, string> = <T, V>(arg1: T, arg2: V)=> {
+return [arg1, arg2];
+ }
 
-console.log(makeTuples('a', true));
-console.log(makeTuples(1, 'asdasd'));
+ const output = generateFn('hello', 'world');
+ console.log(output);
+ 
 
 
 
