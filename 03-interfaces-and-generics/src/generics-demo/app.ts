@@ -84,6 +84,9 @@
 //     data: 1,
 // }
 
+
+// Generic function
+
 // function echo<T>(arg: T): T {
 //     console.log(typeof arg);
     
@@ -104,7 +107,7 @@
 // console.log(takeLast([true, false, false, true, true]));
 // console.log(takeLast([{a: 1}, {a: 2},{a: 3}]));
 
-// Tuples
+//  Generic Tuples
 // const obj = { a: 1, b: 2, c: 3};
 // console.log(Object.entries(obj));
 
@@ -112,18 +115,51 @@
 //     return [a, b];
 // }
 
+
 // console.log(makeTuples('a', true));
 // console.log(makeTuples(1, 'asdasd'));
 
-type GenericConstructor<T , V> = {
-    (arg1: T, arg2: V): [T, V];
-}
- const generateFn: GenericConstructor<string, string> = <T, V>(arg1: T, arg2: V)=> {
-return [arg1, arg2];
- }
+// Generic types
+// type GenericConstructor<T , V> = {
+//     (arg1: T, arg2: V): [T, V];
+// }
+//  const generateFn: GenericConstructor<string, string> = <T, V>(arg1: T, arg2: V)=> {
+// return [arg1, arg2];
+//  }
 
- const output = generateFn('hello', 'world');
- console.log(output);
+//  const output = generateFn('hello', 'world');
+//  console.log(output);
+
+
+// Generic class
+
+class Collection<T> {
+data: T[];
+
+constructor(...elemets: T[]){
+    this.data = elemets;
+}
+
+addElement(el: T){
+    this.data.push(el);
+}
+
+removeElement(el: T){
+const index = this.data.indexOf(el);
+if(index > -1){
+    this.data.splice(index, 1);
+}
+}
+}
+
+const numberCollection = new Collection(1, 2, 3, 4, 5);
+console.log(numberCollection.data);
+numberCollection.addElement(66);
+numberCollection.removeElement(3);
+console.log(numberCollection.data);
+
+
+
  
 
 
