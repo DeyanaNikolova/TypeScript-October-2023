@@ -161,23 +161,25 @@ class Collection<T> {
 // stringCollection.removeElement('b');
 // console.log(stringCollection.data);
 
-class ParamsDada<F, S> {
-first: F;
-second: S;
 
-constructor(f: F, s: S){
-    this.first = f;
-    this.second = s;
-}
+// Class with two generic parameters
+// class ParamsDada<F, S> {
+// first: F;
+// second: S;
 
-getConcatArg(){
-    return `My first param ${this.first} and my second param is ${this.second}.`;
-}
-}
+// constructor(f: F, s: S){
+//     this.first = f;
+//     this.second = s;
+// }
 
-const test1 = new ParamsDada(23, 'asdasd');
-test1.getConcatArg();
-console.log(test1);
+// getConcatArg(){
+//     return `My first param ${this.first} and my second param is ${this.second}.`;
+// }
+// }
+
+// const test1 = new ParamsDada(23, 'asdasd');
+// test1.getConcatArg();
+// console.log(test1);
 
 
 
