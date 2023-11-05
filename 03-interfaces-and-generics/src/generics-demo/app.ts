@@ -60,26 +60,37 @@
 // const animalWithId = generateAndAttachId(animal);
 // console.log(animalWithId);
 
-interface DocumentObj<T> {
-  id: number;
-  name: string;
-  data: T;
+// interface DocumentObj<T> {
+//   id: number;
+//   name: string;
+//   data: T;
+// }
+
+// const doc1: DocumentObj<{name: string}[]> = {
+//   id: 1,
+//   name: "flowers",
+//   data: [{ name: "rosa" }, { name: "daffodil" }, { name: "orhid" }],
+// };
+
+// const doc2: DocumentObj<{name: string, age: number, address: string}> = {
+//     id: 2,
+//     name: 'persons',
+//     data: {name: 'Pesho', age: 12, address: 'Bulgaria'},
+// }
+
+// const doc3: DocumentObj<number> = {
+//     id: 3,
+//     name: 'test',
+//     data: 1,
+// }
+
+function echo<T>(arg: T): T {
+    console.log(typeof arg);
+    
+   return arg; 
 }
 
-const doc1 = {
-  id: 1,
-  name: "flowers",
-  data: [{ name: "rosa" }, { name: "daffodil" }, { name: "orhid" }],
-};
-
-const doc2 = {
-    id: 2,
-    name: 'persons',
-    data: {name: 'Pesho', age: 12, address: 'Bulgaria'},
-}
-
-const doc3 = {
-    id: 3,
-    name: 'test',
-    data: 1,
-}
+echo(1);
+echo('asdasd');
+echo(true);
+echo([1, 2, 3]);
