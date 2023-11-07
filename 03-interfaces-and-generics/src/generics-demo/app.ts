@@ -161,7 +161,6 @@
 // stringCollection.removeElement('b');
 // console.log(stringCollection.data);
 
-
 // Class with two generic parameters
 // class ParamsDada<F, S> {
 // first: F;
@@ -181,34 +180,51 @@
 // test1.getConcatArg();
 // console.log(test1);
 
+// Generics extend
 
-// Generics extend 
+// const person = {
+//   id: 12,
+//   age: 33,
+//   address: 'Sofia, Bulgaria',
+//   firstName: 'Ivan',
+//   lastName: 'Ivanov',
+// }
 
-const person = {
-  id: 12,
-  age: 33,
-  address: 'Sofia, Bulgaria',
-  firstName: 'Ivan',
-  lastName: 'Ivanov',
+// interface FullName {
+//   firstName: String;
+//   lastName: string;
+//   id: number;
+// }
+
+// function fullName<T extends FullName>(obj: T) {
+//  return `The full name of the user is: ${obj.firstName} ${obj.lastName}.`;
+// }
+
+// const obj = fullName(person);
+// console.log(obj);
+
+// Lab: exersise 3
+class BankAccount {
+  private static id: number;
+  private balance: number = 0;
+  private interestRate: number = 0.02;
+
+  constructor() {
+    BankAccount.id += 1;
+  }
+
+  public setInterestRate(interestRate: number) {
+    this.interestRate = interestRate;
+  }
+
+  public getInterest(id: number, years: number): number {
+    return this.interestRate;
+  }
+
+  public deposit(id: number, ammount: number) {
+    this.balance += ammount;
+  }
 }
 
-interface FullName {
-  firstName: String;
-  lastName: string;
-  id: number;
-}
-
-function fullName<T extends FullName>(obj: T) {
- return `The full name of the user is: ${obj.firstName} ${obj.lastName}.`;   
-}
-
-const obj = fullName(person);
-console.log(obj);
-
-
-
-
-
-
-
-
+const bankAccount = new BankAccount();
+bankAccount.deposit(5, 200);
