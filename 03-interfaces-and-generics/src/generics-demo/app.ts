@@ -204,27 +204,35 @@
 // console.log(obj);
 
 // Lab: exersise 3
-class BankAccount {
-  private static id: number;
-  private balance: number = 0;
-  private interestRate: number = 0.02;
+// class BankAccount {
+//   private static id: number;
+//   private balance: number = 0;
+//   private interestRate: number = 0.02;
 
-  constructor() {
-    BankAccount.id += 1;
-  }
+//   constructor() {
+//     BankAccount.id += 1;
+//   }
 
-  public setInterestRate(interestRate: number) {
-    this.interestRate = interestRate;
-  }
+//   public setInterestRate(interestRate: number) {
+//     this.interestRate = interestRate;
+//   }
 
-  public getInterest(id: number, years: number): number {
-    return this.interestRate;
-  }
+//   public getInterest(id: number, years: number): number {
+//     return this.interestRate;
+//   }
 
-  public deposit(id: number, ammount: number) {
-    this.balance += ammount;
-  }
-}
+//   public deposit(id: number, ammount: number) {
+//     this.balance += ammount;
+//   }
+// }
 
-const bankAccount = new BankAccount();
-bankAccount.deposit(5, 200);
+// const bankAccount = new BankAccount();
+// bankAccount.deposit(5, 200);
+
+
+// Must have {age: number}
+const getSmth = <T extends {age: number}>(obj: T) => {
+  return obj;
+};
+
+getSmth({age: 25, a: 1, b: 2, c: 3});
