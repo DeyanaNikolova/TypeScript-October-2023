@@ -26,8 +26,8 @@ class Person {
 const p1 = new Person('Ivan');
 const p2 = new PersonUtils.Person('Stoyan');
 
-/// <reference path="animal.ts" />
 
+/// <reference path="animal.ts" />
 namespace AnimalGroup {
  export class Dog extends Animal {
     constructor(furColor: string, type: string) {
@@ -37,3 +37,19 @@ namespace AnimalGroup {
 }
 
 const dog = new AnimalGroup.Dog('brown', 'Pincher');
+
+namespace Library {
+    export namespace ReadFiles {
+        export class AsyncRead {}
+    };
+
+    export namespace WriteFiles {
+        export class AsyncWrite{}
+    };
+
+    export namespace CopyFiles {
+        export class AsyncCopy{}
+    };
+}
+
+
