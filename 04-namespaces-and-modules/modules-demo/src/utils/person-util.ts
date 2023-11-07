@@ -1,8 +1,8 @@
-import { PersonDetails } from '../interfaces/Person';
+import { PersonDetails, PersonDetailsWithoutAge } from '../interfaces/Person';
 import { capitalizeFirstLetter } from './string-utils';
 
 
-export const transformNameToUppercase = (person: PersonDetails)=>{
+export const transformNameToUppercase = (person: PersonDetails | PersonDetailsWithoutAge)=>{
    const { name } = person;
     return {
         ...person, 
