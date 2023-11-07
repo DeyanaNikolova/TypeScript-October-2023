@@ -130,24 +130,24 @@
 
 // Generic class
 
-class Collection<T> {
-  data: T[];
+// class Collection<T> {
+//   data: T[];
 
-  constructor(...elemets: T[]) {
-    this.data = elemets;
-  }
+//   constructor(...elemets: T[]) {
+//     this.data = elemets;
+//   }
 
-  addElement(el: T) {
-    this.data.push(el);
-  }
+//   addElement(el: T) {
+//     this.data.push(el);
+//   }
 
-  removeElement(el: T) {
-    const index = this.data.indexOf(el);
-    if (index > -1) {
-      this.data.splice(index, 1);
-    }
-  }
-}
+//   removeElement(el: T) {
+//     const index = this.data.indexOf(el);
+//     if (index > -1) {
+//       this.data.splice(index, 1);
+//     }
+//   }
+// }
 
 // const numberCollection = new Collection(1, 2, 3, 4, 5);
 // console.log(numberCollection.data);
@@ -180,6 +180,35 @@ class Collection<T> {
 // const test1 = new ParamsDada(23, 'asdasd');
 // test1.getConcatArg();
 // console.log(test1);
+
+
+// Generics extend 
+
+const person = {
+  id: 12,
+  age: 33,
+  address: 'Sofia, Bulgaria',
+  firstName: 'Ivan',
+  lastName: 'Ivanov',
+}
+
+interface FullName {
+  firstName: String;
+  lastName: string;
+  id: number;
+}
+
+function fullName<T extends FullName>(obj: T) {
+ return `The full name of the user is: ${obj.firstName} ${obj.lastName}.`;   
+}
+
+const obj = fullName(person);
+console.log(obj);
+
+
+
+
+
 
 
 
