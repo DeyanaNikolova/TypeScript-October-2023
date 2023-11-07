@@ -1,4 +1,5 @@
 import { Engine } from "./interfaces/Car";
+import { capitalizeString } from "./utils/string-transformer";
 
 const engine1: Engine = {
   horsPowers: 120,
@@ -10,9 +11,14 @@ const engine2: Engine = {
   make: "BMW",
 };
 
+const person = {};
+
+console.log(person);
+
 console.log(engine1);
 console.log(engine2);
 
-for (let index = 0; index < 10; index++) {
-  console.log(index + 1);
-}
+
+const randonVariable = capitalizeString('zdfsdsgg');
+console.log(randonVariable);
+
