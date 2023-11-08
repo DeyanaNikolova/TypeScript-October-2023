@@ -77,3 +77,25 @@ client.create();
 client.deposit(1, 20);
 client.getInterest(1, 10);
 client.end();
+
+
+
+// Probem 1 function
+function calculator(a: number, operator: string, b: number): void {
+    
+    if(operator === '+'){
+      console.log(a + b);
+    }else if(operator === '-'){
+      console.log(a - b);
+    } else if(operator === '*'){
+      console.log(a * b);
+    } else{
+      console.log(a / b);
+    }
+     
+  }
+  
+  calculator(5, '+', 2);
+  calculator(5, '-', 2);
+  calculator(5, '*', 2);
+  calculator(5, '/', 2);
