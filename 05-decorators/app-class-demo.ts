@@ -48,3 +48,15 @@ function printDecoratorData(
     // console.log("Class initialized: " + context.name);
   });
 }
+
+// Object.seal(constructor) and Object.freeze(constructor) do not work at the moment!!!
+
+// function seal(constructor: Function, context: ClassDecoratorContext) {
+//     Object.seal(constructor);
+//     Object.seal(constructor.prototype);
+// }
+
+// function frozen(constructor: Function, context: ClassDecoratorContext) {
+//     Object.freeze(constructor);
+//     Object.freeze(constructor.prototype);
+// }
