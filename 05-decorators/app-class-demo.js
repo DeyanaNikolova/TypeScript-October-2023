@@ -46,8 +46,8 @@ let Meneger = (() => {
             if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
             __runInitializers(_classThis, _classExtraInitializers);
         }
-        task = "Simple task";
-        project = "Simple project";
+        task = 'Simple task';
+        project = 'Simple project';
         constructor() {
             // console.log("Manager initialized!");
         }
@@ -62,7 +62,7 @@ function withEmploymentDateOnPrototipe(value, context) {
 }
 function withEmploymentDate(baseClass, context) {
     return class extends baseClass {
-        employmentdate = new Date().toISOString();
+        employmentDate = new Date().toISOString();
         constructor(...args) {
             super(...args);
             console.log('Adding employment date to ' + baseClass.name);
@@ -76,3 +76,12 @@ function printDecoratorData(value, context) {
         // console.log("Class initialized: " + context.name);
     });
 }
+// Object.seal(constructor) and Object.freeze(constructor) do not work at the moment!!!
+// function seal(constructor: Function, context: ClassDecoratorContext) {
+//     Object.seal(constructor);
+//     Object.seal(constructor.prototype);
+// }
+// function frozen(constructor: Function, context: ClassDecoratorContext) {
+//     Object.freeze(constructor);
+//     Object.freeze(constructor.prototype);
+// }
