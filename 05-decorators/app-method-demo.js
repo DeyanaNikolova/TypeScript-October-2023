@@ -76,21 +76,3 @@ function withBudget(actionBudget) {
         };
     };
 }
-function calculator(a, operator, b) {
-    if (operator === '+') {
-        console.log(a + b);
-    }
-    else if (operator === '-') {
-        console.log(a - b);
-    }
-    else if (operator === '*') {
-        console.log(a * b);
-    }
-    else {
-        console.log(a / b);
-    }
-}
-calculator(5, '+', 2);
-calculator(5, '-', 2);
-calculator(5, '*', 2);
-calculator(5, '/', 2);
