@@ -32,35 +32,28 @@ var __runInitializers = (this && this.__runInitializers) || function (thisArg, i
     }
     return useValue ? value : void 0;
 };
-let Person = (() => {
+let Employee = (() => {
     let _instanceExtraInitializers = [];
-    let _project_decorators;
-    let _project_initializers = [];
-    return class Person {
+    let _task_decorators;
+    let _task_initializers = [];
+    return class Employee {
         static {
             const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-            _project_decorators = [watchChange];
-            __esDecorate(this, null, _project_decorators, { kind: "accessor", name: "project", static: false, private: false, access: { has: obj => "project" in obj, get: obj => obj.project, set: (obj, value) => { obj.project = value; } }, metadata: _metadata }, _project_initializers, _instanceExtraInitializers);
+            _task_decorators = [withMoreTasks];
+            __esDecorate(null, null, _task_decorators, { kind: "field", name: "task", static: false, private: false, access: { has: obj => "task" in obj, get: obj => obj.task, set: (obj, value) => { obj.task = value; } }, metadata: _metadata }, _task_initializers, _instanceExtraInitializers);
             if (_metadata) Object.defineProperty(this, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
         }
-        #project_accessor_storage = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _project_initializers, "Simple project"));
-        get project() { return this.#project_accessor_storage; }
-        set project(value) { this.#project_accessor_storage = value; }
+        task = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _task_initializers, []));
     };
 })();
-const person = new Person();
-console.log(person.project);
-person.project = 'More complex project';
-function watchChange(accessor, context) {
-    //   console.log({ accessor });
-    //   console.log({ context });
-    return {
-        get: function () {
-            return accessor.get.call(this);
-        },
-        set: function (value) {
-            console.log(`Set ${context.name.toString()} to ${value}.`);
-            accessor.set.call(this, value);
-        },
+const employee = new Employee();
+console.log(employee);
+function withMoreTasks(target, context) {
+    return function (args) {
+        args.push({ name: 'Added 1 task', level: 'low' });
+        args.push({ name: 'Added 2 task', level: 'medium' });
+        args.push({ name: 'Added 3 task', level: 'complex' });
+        console.log({ args });
+        return args;
     };
 }
