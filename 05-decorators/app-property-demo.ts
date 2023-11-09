@@ -8,8 +8,11 @@ class Employee {
   task: Task[] = [];
 }
 
-const employee = new Employee();
-console.log(employee);
+const employee1 = new Employee();
+console.log(employee1);
+
+const employee2 = new Employee();
+console.log(employee2);
 
 function withMoreTasks<T, V extends Task[]>(
   target: undefined,
