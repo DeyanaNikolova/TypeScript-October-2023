@@ -12,9 +12,9 @@ function validateParams<T>(
     ) {
     return function (...args: any) {
         for (let i = 0; i < args.length; i++) {
-            const currentArg = args[i]
+            const currentArg = args[i];
           if(currentArg === undefined || currentArg === null){
-            throw new Error(`Parameter at index ${i} is invalid`)
+            throw new Error(`Parameter at index ${i} is invalid`);
           }
             target.apply(this, args);
         }
