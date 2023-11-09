@@ -32,30 +32,34 @@ var __runInitializers = (this && this.__runInitializers) || function (thisArg, i
     }
     return useValue ? value : void 0;
 };
-let Employee = (() => {
+let Example = (() => {
     let _instanceExtraInitializers = [];
-    let _task_decorators;
-    let _task_initializers = [];
-    return class Employee {
+    let _someMethod_decorators;
+    return class Example {
         static {
             const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-            _task_decorators = [withMoreTasks];
-            __esDecorate(null, null, _task_decorators, { kind: "field", name: "task", static: false, private: false, access: { has: obj => "task" in obj, get: obj => obj.task, set: (obj, value) => { obj.task = value; } }, metadata: _metadata }, _task_initializers, _instanceExtraInitializers);
+            _someMethod_decorators = [validateParams];
+            __esDecorate(this, null, _someMethod_decorators, { kind: "method", name: "someMethod", static: false, private: false, access: { has: obj => "someMethod" in obj, get: obj => obj.someMethod }, metadata: _metadata }, null, _instanceExtraInitializers);
             if (_metadata) Object.defineProperty(this, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
         }
-        task = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _task_initializers, []));
+        someMethod(arg1, arg2) {
+            console.log(`Received params: ${arg1}, ${arg2}`);
+        }
+        constructor() {
+            __runInitializers(this, _instanceExtraInitializers);
+        }
     };
 })();
-const employee1 = new Employee();
-console.log(employee1);
-const employee2 = new Employee();
-console.log(employee2);
-function withMoreTasks(target, context) {
-    return function (args) {
-        args.push({ name: 'Added 1 task', level: 'low' });
-        args.push({ name: 'Added 2 task', level: 'medium' });
-        args.push({ name: 'Added 3 task', level: 'complex' });
-        console.log({ args });
-        return args;
+function validateParams(target, context) {
+    return function (...args) {
+        for (let i = 0; i < args.length; i++) {
+            const currentArg = args[i];
+            if (currentArg === undefined || currentArg === null) {
+                throw new Error(`Parameter at index ${i} is invalid`);
+            }
+            target.apply(this, args);
+        }
     };
 }
+const exampleInstance = new Example();
+exampleInstance.someMethod(undefined, 22);
