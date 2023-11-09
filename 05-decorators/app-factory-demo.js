@@ -32,34 +32,35 @@ var __runInitializers = (this && this.__runInitializers) || function (thisArg, i
     }
     return useValue ? value : void 0;
 };
-let Example = (() => {
+let Employee = (() => {
     let _instanceExtraInitializers = [];
-    let _someMethod_decorators;
-    return class Example {
+    let _tasks_decorators;
+    let _tasks_initializers = [];
+    let _extraTasks_decorators;
+    let _extraTasks_initializers = [];
+    return class Employee {
         static {
             const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-            _someMethod_decorators = [validateParams];
-            __esDecorate(this, null, _someMethod_decorators, { kind: "method", name: "someMethod", static: false, private: false, access: { has: obj => "someMethod" in obj, get: obj => obj.someMethod }, metadata: _metadata }, null, _instanceExtraInitializers);
+            _tasks_decorators = [withTask({ name: 'Task1', level: 'complex' })];
+            _extraTasks_decorators = [withComplexTasks()];
+            __esDecorate(null, null, _tasks_decorators, { kind: "field", name: "tasks", static: false, private: false, access: { has: obj => "tasks" in obj, get: obj => obj.tasks, set: (obj, value) => { obj.tasks = value; } }, metadata: _metadata }, _tasks_initializers, _instanceExtraInitializers);
+            __esDecorate(null, null, _extraTasks_decorators, { kind: "field", name: "extraTasks", static: false, private: false, access: { has: obj => "extraTasks" in obj, get: obj => obj.extraTasks, set: (obj, value) => { obj.extraTasks = value; } }, metadata: _metadata }, _extraTasks_initializers, _instanceExtraInitializers);
             if (_metadata) Object.defineProperty(this, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
         }
-        someMethod(arg1, arg2) {
-            console.log(`Received params: ${arg1}, ${arg2}`);
-        }
-        constructor() {
-            __runInitializers(this, _instanceExtraInitializers);
-        }
+        tasks = (__runInitializers(this, _instanceExtraInitializers), __runInitializers(this, _tasks_initializers, []));
+        extraTasks = __runInitializers(this, _extraTasks_initializers, []);
     };
 })();
-function validateParams(target, context) {
-    return function (...args) {
-        for (let i = 0; i < args.length; i++) {
-            const currentArg = args[i];
-            if (currentArg === undefined || currentArg === null) {
-                throw new Error(`Parameter at index ${i} is invalid`);
-            }
-            target.apply(this, args);
-        }
+const employee = new Employee();
+console.log(employee);
+function withTask(task) {
+    return function (target, context) {
+        return function (args) {
+            args.push(task);
+            return args;
+        };
     };
 }
-const exampleInstance = new Example();
-exampleInstance.someMethod('Hi', 22);
+function withComplexTasks() {
+    return withTask({ name: 'Some other task', level: 'complex' });
+}
