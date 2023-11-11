@@ -1,0 +1,1 @@
+export const aboutPage = `<div>Hello from About Page!</div>`;
