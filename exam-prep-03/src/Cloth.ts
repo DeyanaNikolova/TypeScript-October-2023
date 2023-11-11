@@ -9,10 +9,9 @@ export class Cloth {
       this.type = type;
     }
     toString(): string{
-        return `Product: ${this.type} with size ${this.size}, color ${this.color}`
+        return `Product: ${this.type} with size ${this.size}, color ${this.color}`;
     }
   }
 
-  const cloth = new Cloth('red', 12, 'derss');
-  console.log(cloth.toString());
+
   
