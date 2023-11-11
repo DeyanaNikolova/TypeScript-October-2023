@@ -95,7 +95,7 @@ function calculator(a: number, operator: string, b: number): void {
      
   }
   
-  calculator(5, '+', 2);
-  calculator(5, '-', 2);
-  calculator(5, '*', 2);
-  calculator(5, '/', 2);
+  calculator(5, '+', 10);
+  calculator(25.5, '-', 3);
+  calculator(7, '*', 5);
+  calculator(9, '/', 2);
