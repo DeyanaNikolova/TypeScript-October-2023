@@ -1,24 +1,15 @@
-import { Engine } from "./interfaces/Car";
-import { capitalizeString } from "./utils/string-transformer";
-
-const engine1: Engine = {
-  horsPowers: 120,
-  make: "WV",
-};
-
-const engine2: Engine = {
-  horsPowers: 220,
-  make: "BMW",
-};
-
-const person = {};
-
-console.log(person);
-
-console.log(engine1);
-console.log(engine2);
+const homeAnchor = document.getElementById('home');
+const aboutAnchor = document.getElementById('about');
+const contactAnchor = document.getElementById('contact');
 
 
-const randonVariable = capitalizeString('zdfsdsgg');
-console.log(randonVariable);
+  homeAnchor?.addEventListener('click', ()=>{
+    console.log('home clicked'); 
+  });
 
+  aboutAnchor?.addEventListener('click', ()=>{
+    console.log('about clicked'); 
+  });
+    contactAnchor?.addEventListener('click', ()=>{
+    console.log('contact clicked'); 
+  });
