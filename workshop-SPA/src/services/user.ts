@@ -1,6 +1,6 @@
-import { User } from "../types/user";
+import { User, UserDetails } from "../types/user";
 
-export class UserService {
+export class UsersService {
   private apiUrl: string;
 
   constructor(baseUrl: string) {
@@ -38,5 +38,30 @@ export class UserService {
         console.log("create user", data);
       })
       .catch((err) => console.error(err));
+  }
+
+  updateUser(body: User){
+    fetch(`${this.apiUrl}/${body.id}`, {
+        method: "PUT",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data: User) => {
+          console.log("create user", data);
+        })
+        .catch((err) => console.error(err));
+  }
+
+  deleteUser(id: number){
+    fetch(`${this.apiUrl}/${id}`, { method: 'DELETE' })
+    .then((response) => response.json())
+    .then((data: User) => {
+      console.log("create user", data);
+    })
+    .catch((err) => console.error(err));
+    
   }
 }
