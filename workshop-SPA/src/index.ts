@@ -11,12 +11,13 @@ const userSrvice = new UserService(CONFIG.BASE_URL);
 // userSrvice.getAll();
  userSrvice.getOne(2);
 
- const userForCreation = {
+ const userForCreation: User = {
+    id: 22,
     name: 'Gosho Goshev',
     phone: '123 123 123',
     username: 'gosho123',
-    id: 22,
- } as User;
+    email: 'gosho@gmail.com',
+ } 
 
  userSrvice.addUser(userForCreation);
 
