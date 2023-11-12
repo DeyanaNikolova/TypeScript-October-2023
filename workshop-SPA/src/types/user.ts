@@ -1,5 +1,4 @@
-import { Address } from "./common";
-import { Company } from "./common";
+import { Address, Company } from "./common";
 
 export type User = {
         id: number;

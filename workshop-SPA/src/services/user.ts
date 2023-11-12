@@ -1,3 +1,5 @@
+import { User } from "../types/user";
+
 export class UserService {
   private apiUrl: string;
 
@@ -8,7 +10,7 @@ export class UserService {
   getAll() {
     fetch(this.apiUrl)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: User[]) => {
         console.log("users data", data);
       })
       .catch((err) => console.error(err));
@@ -17,27 +19,22 @@ export class UserService {
   getOne(id: number) {
     fetch(`${this.apiUrl}/${id}`)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: User) => {
         console.log("one user by id", data);
       })
       .catch((err) => console.error(err));
   }
 
-  addUser() {
+  addUser(body: User) {
     fetch(this.apiUrl, {
       method: "POST",
-      body: JSON.stringify({
-        name: "Gosho Atanasov",
-        phone: "010-456-4565-x4958",
-        username: "Gosho",
-        userId: 201,
-      }),
+      body: JSON.stringify(body),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: User) => {
         console.log("create user", data);
       })
       .catch((err) => console.error(err));
