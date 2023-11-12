@@ -1,5 +1,5 @@
-import { Address } from "./index";
-import { Company } from "./index";
+import { Address } from "./common";
+import { Company } from "./common";
 
 export type User = {
         id: number;
