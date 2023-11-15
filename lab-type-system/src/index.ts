@@ -28,8 +28,15 @@
 // convertorInchesToCentimeterd(5);
 
 //  05 - Calculate circle area
-function calcCircleArea(r: number): void {
-   const circleArea = (Math.PI * r * r).toFixed(2);
-   console.log(circleArea);
+// function calcCircleArea(r: number): void {
+//    const circleArea = (Math.PI * r * r).toFixed(2);
+//    console.log(circleArea);
+// }
+// calcCircleArea(5);
+
+// 06 - String length
+function calcStringLength(str: string): void {
+    const strLength = str.length;
+    console.log(strLength);
 }
-calcCircleArea(5);
+calcStringLength('chocolate');
