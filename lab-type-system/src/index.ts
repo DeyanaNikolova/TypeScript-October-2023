@@ -13,9 +13,16 @@
 // printNumbers();
 
 //  03 - Calc rectangle area
-function calcRectangleArea(length: number, width: number): void {
-    const rectArea = length * width;
-    console.log(rectArea);   
+// function calcRectangleArea(length: number, width: number): void {
+//     const rectArea = length * width;
+//     console.log(rectArea);   
+// }
+// calcRectangleArea(5, 7);
+// calcRectangleArea(6, 8);
+
+// 04 - Convertor inches to centimeters
+function convertorInchesToCentimeterd(inches: number): void {
+    const centimeters = inches * 2.54;
+    console.log(centimeters);
 }
-calcRectangleArea(5, 7);
-calcRectangleArea(6, 8);
+convertorInchesToCentimeterd(5);
