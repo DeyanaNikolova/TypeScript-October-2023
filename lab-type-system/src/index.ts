@@ -13,50 +13,50 @@
 // printNumbers();
 
 //  03 - Calc rectangle area
-// function calcRectangleArea(length: number, width: number): void {
-//     const rectArea = length * width;
-//     console.log(rectArea);   
-// }
+function calcRectangleArea(length: number, width: number): void {
+    const rectArea: number = length * width;
+    console.log(rectArea);   
+ }
 // calcRectangleArea(5, 7);
 // calcRectangleArea(6, 8);
 
 // 04 - Convertor inches to centimeters
-// function convertorInchesToCentimeterd(inches: number): void {
-//     const centimeters = inches * 2.54;
-//     console.log(centimeters);
-// }
+function convertorInchesToCentimeterd(inches: number): void {
+    const centimeters: number = inches * 2.54;
+    console.log(centimeters);
+}
 // convertorInchesToCentimeterd(5);
 
 //  05 - Calculate circle area
-// function calcCircleArea(r: number): void {
-//    const circleArea = (Math.PI * r * r).toFixed(2);
-//    console.log(circleArea);
-// }
+function calcCircleArea(r: number): void {
+   const circleArea: string = (Math.PI * r * r).toFixed(2);
+   console.log(circleArea);
+}
 // calcCircleArea(5);
 
 // 06 - String length
-// function calcStringLength(str: string): void {
-//     const strLength = str.length;
-//     console.log(strLength);
-// }
-// calcStringLength('chocolate');
+function calcStringLength(str: string): void {
+    const strLength: number = str.length;
+    console.log(strLength);
+}
+calcStringLength('chocolate');
 
 //  07 - Largest number
-function getLargestNumber(arg1: number, arg2: number, arg3: number): void {
-    const numbersArray: number[] = [];
-    numbersArray.push(arg1);
-    numbersArray.push(arg2);
-    numbersArray.push(arg3);
+// function getLargestNumber(arg1: number, arg2: number, arg3: number): void {
+//     const numbersArray: number[] = [];
+//     numbersArray.push(arg1);
+//     numbersArray.push(arg2);
+//     numbersArray.push(arg3);
 
-    let largest = numbersArray[0];
+//     let largest = numbersArray[0];
   
-    for (let i = 0; i < numbersArray.length; i++) {
+//     for (let i = 0; i < numbersArray.length; i++) {
        
-        if(numbersArray[i] > largest){
-            largest = numbersArray[i]
-        }
-    }
-    console.log(`The largest number is ${largest}`); 
-}
-getLargestNumber(5, -3, 16);
-getLargestNumber(-3, -5, -22.5);
+//         if(numbersArray[i] > largest){
+//             largest = numbersArray[i]
+//         }
+//     }
+//     console.log(`The largest number is ${largest}`); 
+// }
+// getLargestNumber(5, -3, 16);
+// getLargestNumber(-3, -5, -22.5);
