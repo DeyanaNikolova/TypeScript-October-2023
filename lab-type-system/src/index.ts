@@ -21,8 +21,15 @@
 // calcRectangleArea(6, 8);
 
 // 04 - Convertor inches to centimeters
-function convertorInchesToCentimeterd(inches: number): void {
-    const centimeters = inches * 2.54;
-    console.log(centimeters);
+// function convertorInchesToCentimeterd(inches: number): void {
+//     const centimeters = inches * 2.54;
+//     console.log(centimeters);
+// }
+// convertorInchesToCentimeterd(5);
+
+//  05 - Calculate circle area
+function calcCircleArea(r: number): void {
+   const circleArea = (Math.PI * r * r).toFixed(2);
+   console.log(circleArea);
 }
-convertorInchesToCentimeterd(5);
+calcCircleArea(5);
