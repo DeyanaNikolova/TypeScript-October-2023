@@ -35,8 +35,28 @@
 // calcCircleArea(5);
 
 // 06 - String length
-function calcStringLength(str: string): void {
-    const strLength = str.length;
-    console.log(strLength);
+// function calcStringLength(str: string): void {
+//     const strLength = str.length;
+//     console.log(strLength);
+// }
+// calcStringLength('chocolate');
+
+//  07 - Largest number
+function getLargestNumber(arg1: number, arg2: number, arg3: number): void {
+    const numbersArray: number[] = [];
+    numbersArray.push(arg1);
+    numbersArray.push(arg2);
+    numbersArray.push(arg3);
+
+    let largest = numbersArray[0];
+  
+    for (let i = 0; i < numbersArray.length; i++) {
+       
+        if(numbersArray[i] > largest){
+            largest = numbersArray[i]
+        }
+    }
+    console.log(`The largest number is ${largest}`); 
 }
-calcStringLength('chocolate');
+getLargestNumber(5, -3, 16);
+getLargestNumber(-3, -5, -22.5);
