@@ -13,33 +13,33 @@
 // printNumbers();
 
 //  03 - Calc rectangle area
-function calcRectangleArea(length: number, width: number): void {
-    const rectArea: number = length * width;
-    console.log(rectArea);   
- }
+// function calcRectangleArea(length: number, width: number): void {
+//     const rectArea: number = length * width;
+//     console.log(rectArea);   
+//  }
 // calcRectangleArea(5, 7);
 // calcRectangleArea(6, 8);
 
 // 04 - Convertor inches to centimeters
-function convertorInchesToCentimeterd(inches: number): void {
-    const centimeters: number = inches * 2.54;
-    console.log(centimeters);
-}
+// function convertorInchesToCentimeterd(inches: number): void {
+//     const centimeters: number = inches * 2.54;
+//     console.log(centimeters);
+// }
 // convertorInchesToCentimeterd(5);
 
 //  05 - Calculate circle area
-function calcCircleArea(r: number): void {
-   const circleArea: string = (Math.PI * r * r).toFixed(2);
-   console.log(circleArea);
-}
+// function calcCircleArea(r: number): void {
+//    const circleArea: string = (Math.PI * r * r).toFixed(2);
+//    console.log(circleArea);
+// }
 // calcCircleArea(5);
 
 // 06 - String length
-function calcStringLength(str: string): void {
-    const strLength: number = str.length;
-    console.log(strLength);
-}
-calcStringLength('chocolate');
+// function calcStringLength(str: string): void {
+//     const strLength: number = str.length;
+//     console.log(strLength);
+// }
+// calcStringLength('chocolate');
 
 //  07 - Largest number
 // function getLargestNumber(arg1: number, arg2: number, arg3: number): void {
@@ -60,3 +60,20 @@ calcStringLength('chocolate');
 // }
 // getLargestNumber(5, -3, 16);
 // getLargestNumber(-3, -5, -22.5);
+
+//  08 Sun of numbers n..m
+function calc(n: string, m: string): void {
+    const mAsNumber = Number(m);
+    const array: number[] = [];
+
+    const initialValue: number = 0;
+   
+    for (let i = Number(n); i <= mAsNumber; i++) { 
+       array.push(i);
+    }
+    
+     let sum = array.reduce((previousVal, currentVal) => previousVal + currentVal, initialValue);
+     console.log(sum); 
+}
+calc('1', '5');
+calc('-8', '20');
