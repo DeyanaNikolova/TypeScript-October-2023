@@ -1,78 +1,41 @@
 "use strict";
-class BankAccount {
+// interface client {
+//     id: number,
+//     balance: number,
+// }
+class Car {
     constructor() {
-        this._interestRate = 0.02;
-        this.clients = [];
-        this.activity = [];
-        this._id = 0;
-        this._balance = 0;
+        this.brand = '';
+        this.model = '';
+        this.horsePower = 0;
     }
-    create() {
-        this._id += 1;
-        this.clients.push({
-            id: this._id,
-            balance: 0
-        });
-        this.activity.push(`Account ID${this._id} created`);
+    get carBrand() {
+        return this.brand;
     }
-    deposit(id, amount) {
-        const client = this.clients.find(x => x.id === id);
-        if (!client) {
-            this.activity.push('Account does not exist');
-            return;
-        }
-        this._balance += amount;
-        client.balance += amount;
-        this.activity.push(`Deposited ${amount} to ID${client.id}`);
+    set carBrand(newBrand) {
+        this.brand = newBrand;
     }
-    setInterest(interest) {
-        this._interestRate = interest;
+    get carModel() {
+        return this.model;
     }
-    getInterest(id, years) {
-        const client = this.clients.find(x => x.id === id);
-        if (!client) {
-            this.activity.push('Account does not exist');
-            return;
-        }
-        this.activity.push((client.balance * this._interestRate * years).toFixed(2));
+    set carModel(newModel) {
+        this.model = newModel;
     }
-    end() {
-        this.activity.forEach(x => console.log(x));
-        this.activity = [];
+    get carHorsePower() {
+        return this.horsePower;
+    }
+    set carHorsePower(newPower) {
+        this.horsePower = newPower;
     }
 }
-const client = new BankAccount();
-// client.create();
-// client.create();
-// client.deposit(1, 20);
-// client.deposit(3, 20);
-// client.deposit(2, 10);
-// client.setInterest(1.5);
-// client.getInterest(1, 1);
-// client.getInterest(2, 1);
-// client.getInterest(3, 1);
-// client.end();
-client.create();
-client.deposit(1, 20);
-client.getInterest(1, 10);
-client.end();
-// Probem 1 function
-function calculator(a, operator, b) {
-    if (operator === '+') {
-        console.log(a + b);
-    }
-    else if (operator === '-') {
-        console.log(a - b);
-    }
-    else if (operator === '*') {
-        console.log(a * b);
-    }
-    else {
-        console.log(a / b);
-    }
+const car = new Car();
+function carInfo(input) {
+    const [brand, model, horsePower] = input.split(' ');
+    const horsePowerToNumber = Number(horsePower);
+    car.brand = brand;
+    car.model = model;
+    car.horsePower = horsePowerToNumber;
+    console.log(`The car is: ${car.brand} ${car.model} - ${car.horsePower}`);
 }
-calculator(5, '+', 10);
-calculator(25.5, '-', 3);
-calculator(7, '*', 5);
-calculator(9, '/', 2);
+carInfo('Chevrolet Impala 390');
 //# sourceMappingURL=app.js.map
