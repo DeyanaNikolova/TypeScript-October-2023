@@ -79,53 +79,89 @@
 // client.end();
 
 //  01 - Car Info
-class Car {
-    brand: string;
-    model: string;
-    horsePower: number;
+// class Car {
+//     brand: string;
+//     model: string;
+//     horsePower: number;
 
-    constructor(){
-        this.brand = '';
-        this.model = '';
-        this.horsePower = 0;
+//     constructor(){
+//         this.brand = '';
+//         this.model = '';
+//         this.horsePower = 0;
+//     }
+
+//     get carBrand(): string{
+//         return this.brand;
+//     }
+//     set carBrand(newBrand: string){
+//      this.brand = newBrand;
+//     }
+
+//     get carModel(): string{
+//         return this.model;
+//     }
+
+//     set carModel(newModel){
+//         this.model = newModel;
+//     }
+
+//     get carHorsePower(): number{
+//         return this.horsePower;
+//     }
+
+//     set carHorsePower(newPower){
+//         this.horsePower = newPower;
+//     }
+// }
+
+// const car = new Car();
+
+// function carInfo(input: string): void{
+//     const [brand, model, horsePower] = input.split(' ');
+//    const horsePowerToNumber = Number(horsePower);
+//    car.brand = brand;
+//    car.model = model;
+//    car.horsePower = horsePowerToNumber;
+//    console.log(`The car is: ${car.brand} ${car.model} - ${car.horsePower}`);  
+// }
+
+// carInfo('Chevrolet Impala 390');
+
+//  02 - Opinion Poll
+class Person {
+    name: string;
+    age: number;
+    
+    constructor() {
+       this.name = '';
+       this.age = 0; 
+    }
+    get personName(): string{
+        return this.name;
     }
 
-    get carBrand(): string{
-        return this.brand;
-    }
-    set carBrand(newBrand: string){
-     this.brand = newBrand;
+    set personName(newName: string){
+        this.name = newName;
     }
 
-    get carModel(): string{
-        return this.model;
+    get personAge(): number{
+        return this.age;
     }
 
-    set carModel(newModel){
-        this.model = newModel;
-    }
-
-    get carHorsePower(): number{
-        return this.horsePower;
-    }
-
-    set carHorsePower(newPower){
-        this.horsePower = newPower;
+    set personAge(newAge: number){
+        this.age = newAge;
     }
 }
+const person = new Person();
 
-const car = new Car();
-
-function carInfo(input: string): void{
-    const [brand, model, horsePower] = input.split(' ');
-   const horsePowerToNumber = Number(horsePower);
-   car.brand = brand;
-   car.model = model;
-   car.horsePower = horsePowerToNumber;
-   console.log(`The car is: ${car.brand} ${car.model} - ${car.horsePower}`);  
+function printPersonInfo(line: string): void {
+    const [name, age] = line.split(' ');
+    person.name = name;
+    person.age = Number(age);
+    console.log(`${person.name} is ${person.age} years old.`);
 }
 
-carInfo('Chevrolet Impala 390');
+printPersonInfo('Peter 12');
 
 
 
