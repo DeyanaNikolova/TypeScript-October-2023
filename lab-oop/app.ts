@@ -128,40 +128,106 @@
 // carInfo('Chevrolet Impala 390');
 
 //  02 - Opinion Poll
-class Person {
-    name: string;
-    age: number;
+// class Person {
+//     name: string;
+//     age: number;
     
+//     constructor() {
+//        this.name = '';
+//        this.age = 0; 
+//     }
+//     get personName(): string{
+//         return this.name;
+//     }
+
+//     set personName(newName: string){
+//         this.name = newName;
+//     }
+
+//     get personAge(): number{
+//         return this.age;
+//     }
+
+//     set personAge(newAge: number){
+//         this.age = newAge;
+//     }
+// }
+// const person = new Person();
+
+// function printPersonInfo(line: string): void {
+//     const [name, age] = line.split(' ');
+//     person.name = name;
+//     person.age = Number(age);
+//     console.log(`${person.name} is ${person.age} years old.`);
+// }
+
+// printPersonInfo('Peter 12');
+
+//  03 - Bank Account
+type Client = {
+    id: number;
+    balance: number;
+}
+class BankAccount{
+    private id: number;
+    private balance: number;
+    private interestRate: number;
+
+   private clients: Client[] = [];
+   private activities: string[] = [];
+
     constructor() {
-       this.name = '';
-       this.age = 0; 
-    }
-    get personName(): string{
-        return this.name;
+     this.id = 0;
+     this.balance = 0;
+     this.interestRate = 0.2;  
     }
 
-    set personName(newName: string){
-        this.name = newName;
+    create(): void{
+        this.id += 1;
+        this.clients.push({id: this.id, balance: 0});
+        this.activities.push(`Account ID${this.id} created`);
     }
 
-    get personAge(): number{
-        return this.age;
-    }
+ setInterestRate(interest: number){
+ this.interestRate = interest;
+ }
 
-    set personAge(newAge: number){
-        this.age = newAge;
+ getInterest(id: number, years: number){
+    const client = this.clients.find((x)=> x.id === id);
+    if(!client){
+        this.activities.push('Account does not exist');
+        return;
     }
+    this.activities.push((client.balance * this.interestRate * years).toFixed(2)); 
+ }
+
+ deposit(id: number, amount: number){
+    const client = this.clients.find((x)=> x.id === id);
+    if(!client){
+        this.activities.push('Account does not exist');
+        return;
+    }
+    this.balance += amount;
+    client.balance += amount;
+    this.activities.push(`Deposited ${amount} to ID${client.id}`);
+ }
+
+ end(){
+    this.activities.forEach((x)=> console.log(x));
+    this.activities = [];
+ }
 }
-const person = new Person();
-
-function printPersonInfo(line: string): void {
-    const [name, age] = line.split(' ');
-    person.name = name;
-    person.age = Number(age);
-    console.log(`${person.name} is ${person.age} years old.`);
-}
-
-printPersonInfo('Peter 12');
+const client = new BankAccount();
+client.create();
+client.create();
+client.deposit(1, 20);
+client.deposit(3, 20);
+client.deposit(2, 10);
+client.setInterestRate(1.5);
+client.getInterest(1, 1);
+client.getInterest(2, 1);
+client.getInterest(3, 1);
+client.end();
 
 
 
