@@ -188,11 +188,11 @@ class BankAccount{
         this.activities.push(`Account ID${this.id} created`);
     }
 
- setInterestRate(interest: number){
+ setInterestRate(interest: number): void{
  this.interestRate = interest;
  }
 
- getInterest(id: number, years: number){
+ getInterest(id: number, years: number): void{
     const client = this.clients.find((x)=> x.id === id);
     if(!client){
         this.activities.push('Account does not exist');
@@ -201,7 +201,7 @@ class BankAccount{
     this.activities.push((client.balance * this.interestRate * years).toFixed(2)); 
  }
 
- deposit(id: number, amount: number){
+ deposit(id: number, amount: number): void{
     const client = this.clients.find((x)=> x.id === id);
     if(!client){
         this.activities.push('Account does not exist');
@@ -212,7 +212,7 @@ class BankAccount{
     this.activities.push(`Deposited ${amount} to ID${client.id}`);
  }
 
- end(){
+ end(): void{
     this.activities.forEach((x)=> console.log(x));
     this.activities = [];
  }
